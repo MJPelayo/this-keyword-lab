@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3: 'this' with bind() Method</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .instructions {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #fff3cd;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            text-align: left;
+        }
+        
+        .counter-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 2px solid #dee2e6;
+        }
+        
+        #count-display {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #007bff;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            margin: 0 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        #inc-btn {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        #inc-btn:hover {
+            background-color: #218838;
+        }
+        
+        #dec-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+        
+        #dec-btn:hover {
+            background-color: #c82333;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .back-link:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h2>Exercise 3: 'this' with bind() Method</h2>
+        <p>This exercise demonstrates how the <code>bind()</code> method preserves the <code>this</code> context when passing object methods as event handlers.</p>
+        <p>The <code>CounterApp</code> object has increment and decrement methods that use <code>this.count</code>. Without <code>bind()</code>, <code>this</code> would refer to the button element instead of the CounterApp object.</p>
+        
+        <div class="code-block">
+            incBtn.addEventListener("click", CounterApp.increment.bind(CounterApp));<br>
+            decBtn.addEventListener("click", CounterApp.decrement.bind(CounterApp));
+        </div>
+    </div>
+    
+    <div class="counter-container">
+        <h3>Counter Application</h3>
+        <div id="count-display">0</div>
+        <button id="inc-btn" class="btn">Increment (+)</button>
+        <button id="dec-btn" class="btn">Decrement (-)</button>
+    </div>
+    
+    <a href="index.html" class="back-link">← Back to Exercises</a>
+    
+    <script src="exercise3.js"></script>
+</body>
+</html>
