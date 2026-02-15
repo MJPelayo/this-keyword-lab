@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1: Basic 'this' Usage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .color-btn {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .red { background-color: #ff6b6b; color: white; }
+        .blue { background-color: #4ecdc4; color: white; }
+        .green { background-color: #1dd1a1; color: white; }
+        .purple { background-color: #9b59b6; color: white; }
+        
+        .instructions {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #007bff;
+            text-align: left;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .back-link:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h2>Exercise 1: Understanding the 'this' Keyword</h2>
+        <p>This exercise demonstrates how the <code>this</code> keyword works in event handlers.</p>
+        <p>When you click a button, the <code>changeColor()</code> function is called, and <code>this</code> refers to the specific button that was clicked.</p>
+        
+        <div class="code-block">
+            function changeColor() {<br>
+            &nbsp;&nbsp;this.style.backgroundColor = "yellow";<br>
+            }
+        </div>
+    </div>
+    
+    <button class="color-btn red">Red Button</button>
+    <button class="color-btn blue">Blue Button</button>
+    <button class="color-btn green">Green Button</button>
+    <button class="color-btn purple">Purple Button</button>
+    
+    <br>
+    <a href="index.html" class="back-link">← Back to Exercises</a>
+    
+    <script src="exercise1.js"></script>
+</body>
+</html>
