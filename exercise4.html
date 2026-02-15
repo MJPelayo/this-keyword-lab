@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 4: TBD</title>
+    <title>Exercise 4: 'this' in Arrow Functions</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,6 +20,63 @@
             border-radius: 5px;
             border-left: 4px solid #ffc107;
             text-align: left;
+        }
+        
+        .box-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 2px solid #dee2e6;
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .box.active {
+            background-color: #28a745;
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .comparison {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .comparison-item {
+            flex: 1;
+            padding: 15px;
+            margin: 0 10px;
+            background: white;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
         }
         
         .back-link {
@@ -39,9 +96,49 @@
 </head>
 <body>
     <div class="instructions">
-        <h2>Exercise 4: Coming Soon</h2>
-        <p>This exercise is currently being developed. Please check back later!</p>
-        <p>When complete, this will demonstrate another aspect of the JavaScript <code>this</code> keyword.</p>
+        <h2>Exercise 4: 'this' in Arrow Functions</h2>
+        <p>This exercise demonstrates how arrow functions handle the <code>this</code> keyword differently from regular functions.</p>
+        <p>Arrow functions do not have their own <code>this</code> context. Instead, they inherit <code>this</code> from their surrounding lexical scope.</p>
+        
+        <div class="code-block">
+            box.addEventListener("click", (event) => {<br>
+            &nbsp;&nbsp;// "this" does not refer to the clicked element in arrow functions<br>
+            &nbsp;&nbsp;event.currentTarget.classList.add("active");<br>
+            });
+        </div>
+        
+        <div class="comparison">
+            <div class="comparison-item">
+                <h4>Regular Function</h4>
+                <p>In regular functions:<br>
+                - <code>this</code> refers to the element that triggered the event</p>
+                <div class="code-block">
+                    function(event) {<br>
+                    &nbsp;&nbsp;this.classList.add("active");<br>
+                    }
+                </div>
+            </div>
+            <div class="comparison-item">
+                <h4>Arrow Function</h4>
+                <p>In arrow functions:<br>
+                - <code>this</code> inherits from lexical scope<br>
+                - Use <code>event.currentTarget</code> instead</p>
+                <div class="code-block">
+                    (event) => {<br>
+                    &nbsp;&nbsp;event.currentTarget.classList.add("active");<br>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="box-container">
+        <h3>Click the box below to see the arrow function behavior</h3>
+        <div class="box">
+            Click Me!<br>
+            (Arrow Function)
+        </div>
+        <p>The box will turn green and scale up when clicked, using <code>event.currentTarget</code> instead of <code>this</code>.</p>
     </div>
     
     <a href="index.html" class="back-link">← Back to Exercises</a>
