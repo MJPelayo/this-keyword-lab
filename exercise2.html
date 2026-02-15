@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2: 'this' with Data Attributes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .instructions {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #fff3cd;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            text-align: left;
+        }
+        
+        .swatch {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+            border: 2px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .swatch:hover {
+            transform: scale(1.1);
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .back-link:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h2>Exercise 2: 'this' with Data Attributes</h2>
+        <p>This exercise demonstrates how the <code>this</code> keyword can access data attributes from HTML elements.</p>
+        <p>Each color swatch has a <code>data-color</code> attribute containing its color value. When clicked, the <code>applyColor()</code> function uses <code>this</code> to access the specific swatch's data attribute and apply the color.</p>
+        
+        <div class="code-block">
+            function applyColor() {<br>
+            &nbsp;&nbsp;const color = this.dataset.color;<br>
+            &nbsp;&nbsp;this.style.backgroundColor = color;<br>
+            }
+        </div>
+    </div>
+    
+    <div class="swatch-container">
+        <div class="swatch" data-color="#ff6b6b" style="background-color: #f0f0f0;">Red</div>
+        <div class="swatch" data-color="#4ecdc4" style="background-color: #f0f0f0;">Blue</div>
+        <div class="swatch" data-color="#1dd1a1" style="background-color: #f0f0f0;">Green</div>
+        <div class="swatch" data-color="#9b59b6" style="background-color: #f0f0f0;">Purple</div>
+        <div class="swatch" data-color="#f39c12" style="background-color: #f0f0f0;">Orange</div>
+        <div class="swatch" data-color="#e74c3c" style="background-color: #f0f0f0;">Crimson</div>
+    </div>
+    
+    <a href="index.html" class="back-link">← Back to Exercises</a>
+    
+    <script src="exercise2.js"></script>
+</body>
+</html>
